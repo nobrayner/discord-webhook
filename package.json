@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "pack": "ncc build"
+    "ncc:pack": "ncc build"
   },
   "devDependencies": {
     "@types/node": "^14.0.13",
