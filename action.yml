@@ -7,12 +7,16 @@ inputs:
     description: 'GitHub Token'
     required: true
 
+  discord-webhook:
+    description: 'The WebHook URL to call. Should be stored in Secrets on the Repository'
+    required: true
+
   username:
     description: 'Overrides the current username of the webhook'
     required: false
     default: 'GitHub'
 
-  avatar_url:
+  avatar-url:
     description: 'Overrides the current avatar of the webhook'
     required: false
     default: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
