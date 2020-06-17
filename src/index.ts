@@ -23,7 +23,7 @@ function workflowStatusFromJobs(jobs: JobData[]): 'Success' | 'Failure' | 'Cance
     return 'Cancelled'
   }
 
-  if (statuses.includes('Failure')) {
+  if (statuses.includes('failure')) {
     return 'Failure'
   }
 
