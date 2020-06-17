@@ -1,8 +1,6 @@
 import * as core from '@actions/core'
 import * as GitHub from '@actions/github'
 
-const context = GitHub.context
-
 const { GITHUB_RUN_ID } = process.env
 
 async function run(): Promise<void> {
@@ -18,6 +16,12 @@ async function run(): Promise<void> {
       const octokit = GitHub.getOctokit(githubToken)
 
       core.info('Acquired octokit!')
+
+      const context = GitHub.context
+
+      core.info(`${context.repo.owner}`)
+      core.info(`${context.repo.repo}`)
+      core.info(`${GITHUB_RUN_ID}`)
 
       let workflowJobs = octokit.actions.listJobsForWorkflowRun({
         owner: context.repo.owner,
