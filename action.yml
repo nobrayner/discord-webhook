@@ -1,10 +1,49 @@
-name: 'Example Action'
-description: 'A simple base template for creating a TypeScript GitHub Actions Action'
-author: 'Example Action'
+name: 'Discord Webhook'
+description: 'A GitHub action to call a Discord Webhook'
+author: 'Braydon Hall'
 
-#inputs:
+inputs:
+  github-token:
+    description: 'GitHub Token'
+    required: true
 
-#outputs:
+  username:
+    description: 'Overrides the current username of the webhook'
+    required: false
+    default: 'GitHub'
+
+  avatar_url:
+    description: 'Overrides the current avatar of the webhook'
+    required: false
+    default: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+
+  title:
+    description: 'Overrides the default title'
+    required: false
+  
+  description:
+    description: 'The message to display'
+    required: false
+  
+  include-details:
+    description: 'Whether or not to include the job breakdown of the Workflow run'
+    required: false
+    default: 'true'
+  
+  color-success:
+    description: 'Overrides the default success color'
+    required: false
+    default: '17cf48'
+  
+  color-failure:
+    description: 'Overrides the default failure color'
+    required: false
+    default: 'e72727'
+
+  color-cancelled:
+    description: 'Overrides the default cancelled color'
+    required: false
+    default: 'd3d3d3'
 
 runs:
   using: 'node12'

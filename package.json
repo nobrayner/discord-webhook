@@ -16,6 +16,8 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "@actions/core": "^1.2.4"
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^3.0.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
