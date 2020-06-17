@@ -13,13 +13,19 @@ async function run(): Promise<void> {
       const githubToken = core.getInput('github-token', { required: true })
       core.setSecret(githubToken)
 
+      core.info('Gathered input!')
+
       const octokit = GitHub.getOctokit(githubToken)
+
+      core.info('Acquired octokit!')
 
       let workflowJobs = octokit.actions.listJobsForWorkflowRun({
         owner: context.repo.owner,
         repo: context.repo.repo,
         run_id: parseInt(GITHUB_RUN_ID, 10)
       })
+
+      core.info('Listing this workflows Jobs:')
 
       core.info(JSON.stringify(workflowJobs))
     }
