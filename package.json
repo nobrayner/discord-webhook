@@ -1,0 +1,21 @@
+{
+  "name": "discord-webhook",
+  "version": "1.0.0",
+  "description": "A GitHub action to call a Discord Webhook",
+  "main": "lib/index.js",
+  "repository": "https://github.com/nobrayner/discord-webhook.git",
+  "author": "Braydon Hall <40751395+nobrayner@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "pack": "ncc build"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@zeit/ncc": "^0.22.3",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.4"
+  }
+}

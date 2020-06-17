@@ -1,0 +1,11 @@
+name: 'Example Action'
+description: 'A simple base template for creating a TypeScript GitHub Actions Action'
+author: 'Example Action'
+
+#inputs:
+
+#outputs:
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
