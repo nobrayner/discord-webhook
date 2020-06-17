@@ -27,6 +27,8 @@ async function run(): Promise<void> {
         owner: context.repo.owner,
         repo: context.repo.repo,
         run_id: parseInt(GITHUB_RUN_ID, 10)
+      }).catch(error => {
+        core.setFailed(error.message)
       })
 
       core.info('Listing this workflows Jobs:')
