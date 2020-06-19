@@ -65,9 +65,6 @@ async function run(): Promise<void> {
                                   .filter(j => j.status === 'completed')
                                   .map(j => ({ name: j.name, status: j.conclusion, url: j.html_url }))
 
-        core.info('Found the following jobs:')
-        core.info(JSON.stringify(workflowJobs.filter(j => j.status === 'completed')))
-
         let workflowStatus = workflowStatusFromJobs(jobData)
 
         let color = workflowStatus === 'Success' ? colorSuccess : (workflowStatus === 'Failure' ? colorFailure : colorCancelled)
