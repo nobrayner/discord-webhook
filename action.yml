@@ -14,12 +14,12 @@ inputs:
   username:
     description: 'Overrides the current username of the webhook'
     required: false
-    default: 'GitHub'
+    default: 'GitHub Actions'
 
   avatar-url:
     description: 'Overrides the current avatar of the webhook'
     required: false
-    default: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+    default: 'https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg'
 
   title:
     description: 'Overrides the default title. Include the status in the title by adding the {{STATUS}} placeholder.'
