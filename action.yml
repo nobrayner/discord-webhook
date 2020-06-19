@@ -22,11 +22,11 @@ inputs:
     default: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
 
   title:
-    description: 'Overrides the default title'
+    description: 'Overrides the default title. Include the status in the title by adding the {{STATUS}} placeholder.'
     required: false
   
   description:
-    description: 'The message to display'
+    description: 'The message to display. Include the status in the description by adding the {{STATUS}} placeholder'
     required: false
   
   include-details:

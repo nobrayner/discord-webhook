@@ -79,9 +79,9 @@ async function run(): Promise<void> {
                 url: `https://github.com/${context.actor}`,
                 icon_url: `https://github.com/${context.actor}.png`
               },
-              title: inputTitle || `[${context.repo.owner}/${context.repo.repo}] ${GITHUB_WORKFLOW}: ${workflowStatus}`,
+              title: inputTitle.replace('{{STATUS}}', workflowStatus) || `[${context.repo.owner}/${context.repo.repo}] ${GITHUB_WORKFLOW}: ${workflowStatus}`,
               url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${GITHUB_RUN_ID}`,
-              description: inputDescription || undefined,
+              description: inputDescription.replace('{{STATUS}}', workflowStatus) || undefined,
               color: color
             }
           ]
