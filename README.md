@@ -27,7 +27,7 @@ Use the defaults
     discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
 ```
 
-
+![defaults](https://raw.githubusercontent.com/nobrayner/discord-webhook/master/docs/defaults.png?raw=true)
 
 Overwrite everything
 
@@ -47,3 +47,4 @@ Overwrite everything
     color-cancelled: '0x42daf5'
 ```
 
+![overwrite-everything](https://raw.githubusercontent.com/nobrayner/discord-webhook/master/docs/overwrite-everything.png?raw=true)
