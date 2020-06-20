@@ -30,22 +30,22 @@ inputs:
     required: false
   
   include-details:
-    description: 'Whether or not to include the job breakdown of the Workflow run'
+    description: 'Whether or not to include the individual job status breakdown of the Workflow run'
     required: false
     default: 'true'
   
   color-success:
-    description: 'Overrides the default success color'
+    description: 'Overrides the default success color. Any valid hex-color-code. E.g. #17cf48, 17cf48, 0x17cf48'
     required: false
     default: '17cf48'
   
   color-failure:
-    description: 'Overrides the default failure color'
+    description: 'Overrides the default failure color. Any valid hex-color-code. E.g. #17cf48, 17cf48, 0x17cf48'
     required: false
     default: 'e72727'
 
   color-cancelled:
-    description: 'Overrides the default cancelled color'
+    description: 'Overrides the default cancelled color. Any valid hex-color-code. E.g. #17cf48, 17cf48, 0x17cf48'
     required: false
     default: 'd3d3d3'
 
