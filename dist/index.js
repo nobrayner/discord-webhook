@@ -6664,7 +6664,7 @@ function run() {
                 const discordWebhook = core.getInput('discord-webhook', { required: true });
                 const username = core.getInput('username');
                 const avatarURL = core.getInput('avatar-url');
-                const includeDetails = core.getInput('include-details').trim().toLowerCase() === 'true' || true;
+                const includeDetails = core.getInput('include-details').trim().toLowerCase() === 'true' || false;
                 const colorSuccess = parseInt(core.getInput('color-success').trim().replace(/^#/g, ''), 16);
                 const colorFailure = parseInt(core.getInput('color-failure').trim().replace(/^#/g, ''), 16);
                 const colorCancelled = parseInt(core.getInput('color-cancelled').trim().replace(/^#/g, ''), 16);
