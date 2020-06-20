@@ -1,6 +1,6 @@
 {
   "name": "discord-webhook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A GitHub action to call a Discord Webhook",
   "main": "lib/index.js",
   "repository": "https://github.com/nobrayner/discord-webhook.git",
