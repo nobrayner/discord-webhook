@@ -93,7 +93,7 @@ async function run(): Promise<void> {
           jobData.forEach(jd => {
             fields.push({
               name: jd.name,
-              value: `\`${jd.status}\``,
+              value: `[\`${jd.status}\`](${jd.url})`,
               inline: true
             })
           })
