@@ -1,6 +1,6 @@
-# Discord Webhook
+# Discord Workflow Status Notifier
 
-A GitHub Action to call a Discord Webhook
+A GitHub action to report workflow and job status to a Discord Webhook
 
 ## Inputs
 
@@ -20,11 +20,30 @@ A GitHub Action to call a Discord Webhook
 Use the defaults
 
 ```yaml
-- name: Notify
-  uses: nobrayner/discord-webhook@v1
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
+name: Build and Test
+on: [ pull_request ]
+
+jobs:
+  build:
+    name: Build the Code
+    # build job
+  test:
+    name: Test the Code
+    # test job
+  notify:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    needs: # make sure the notification is sent AFTER the jobs you want included have completed
+      - build
+      - test
+    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    
+    steps:
+      - name: Notify
+        uses: nobrayner/discord-webhook@v1
+        with:
+          github-token: ${{ secrets.github_token }}
+          discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
 ```
 
 ![defaults](https://raw.githubusercontent.com/nobrayner/discord-webhook/master/docs/defaults.png?raw=true)
@@ -32,19 +51,38 @@ Use the defaults
 Overwrite everything
 
 ```yaml
-- name: Notify
-  uses: nobrayner/discord-webhook@v1
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
-    username: 'Bob'
-    avatar-url: 'https://octodex.github.com/images/Terracottocat_Single.png'
-    title: '${{ github.workflow }}: {{STATUS}}'
-    description: '${{ github.event_name }} trigged this {{STATUS}}!'
-    include-details: 'false'
-    color-success: '#4287f5'
-    color-failure: 'eb4034'
-    color-cancelled: '0x42daf5'
+name: Build and Test
+on: [ pull_request ]
+
+jobs:
+  build:
+    name: Build the Code
+    # build job
+  test:
+    name: Test the Code
+    # test job
+  notify:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    needs: # make sure the notification is sent AFTER the jobs you want included have completed
+      - build
+      - test
+    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+
+    steps:
+      - name: Notify
+        uses: nobrayner/discord-webhook@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          username: 'Bob'
+          avatar-url: 'https://octodex.github.com/images/Terracottocat_Single.png'
+          title: '${{ github.workflow }}: {{STATUS}}'
+          description: '${{ github.event_name }} trigged this {{STATUS}}!'
+          include-details: 'false'
+          color-success: '#4287f5'
+          color-failure: 'eb4034'
+          color-cancelled: '0x42daf5'
 ```
 
 ![overwrite-everything](https://raw.githubusercontent.com/nobrayner/discord-webhook/master/docs/overwrite-everything.png?raw=true)

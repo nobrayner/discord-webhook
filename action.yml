@@ -1,5 +1,5 @@
-name: 'Discord Webhook'
-description: 'A GitHub action to call a Discord Webhook'
+name: 'Discord Workflow Status Notifier'
+description: 'A GitHub action to report workflow and job status to a Discord Webhook'
 author: 'Braydon Hall'
 
 inputs:
@@ -52,3 +52,7 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/index.js'
+
+branding:
+  icon: 'message-square'
+  color: 'gray-dark'
