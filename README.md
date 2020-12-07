@@ -1,6 +1,6 @@
 # Discord Workflow Status Notifier
 
-A GitHub action to report workflow and job status to a Discord Webhook
+A GitHub action to report workflow and job status to a Discord Channel via WebHook
 
 ## Inputs
 
